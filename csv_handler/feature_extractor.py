@@ -57,24 +57,34 @@ def build_header(max_packets):
 
 
 #TODO
-def get_difference_time(filter_ip_csv, address):
-    before = 0
-    after = 0
+def get_difference_time(address, n_packets):
+    s_ip = address
+    flag = False
     result = []
-    with open('WS12-05-2019.csv') as csvfile:
+    with open('filter_IP_1.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
+        #while n_packets > 0 :
         for row in readCSV:
-            if(row[3] == address or row[4] == address):
-                if before == 0:
-                    before = datetime.strptime(row[0], '%M:%S.%f')
-                else:
-                    after = datetime.strptime(row[0], '%M:%S.%f')
-                    result.append(str(after - before))
-                    before = after
+            if row[4] == address and not flag:
+                #print("s_ip: " + row[4] + " d_ip: " + row[5])
+                s_ip = row[5]
+                d_ip = row[4]
+                flag = True
+                before = datetime.strptime(row[1], '%M:%S.%f')
+                n_packets = n_packets - 1
+
+            elif flag and row[4] == s_ip and row[5] == d_ip:
+                #print("s_ip: " + row[4] + "d_ip: " + row[5])
+                after = datetime.strptime(row[1], '%M:%S.%f')
+                result.append(after - before)
+                s_ip = address
+                flag = False
+                n_packets = n_packets-1
+
     return result
 
 
-def get_label(ip_list ,index):
+def get_label(ip_list, index):
     if ip_list[index] == "192.168.1.150":
         return "Camera 1"
     elif ip_list[index] == "192.168.1.151":
@@ -85,13 +95,12 @@ def get_label(ip_list ,index):
         return "Intercom"
 
 
-def build_feature_row(filter_IP, ip_list, index):
+def build_feature_row(ip_list, index, n_packets):
     row = [str(index+1), str(ip_list[index])]
-    n_packets = get_n_packets(filter_IP, ip_list[index])
-    row.append(n_packets[0])
-    row.append(n_packets[1])
-    diff_time = get_difference_time(filter_IP,ip_list[index])
-    sum_diff_time = 0
+    row.append(str(n_packets/2))
+    row.append(str(n_packets/2))
+    diff_time = get_difference_time(ip_list[index], n_packets)
+    sum_diff_time = diff_time[0]
     for time in diff_time:
         sum_diff_time = sum_diff_time + time
         row.append(time)
@@ -103,22 +112,18 @@ def build_feature_row(filter_IP, ip_list, index):
 
 #TODO
 def extract_feature():
-    filter_IP = pd.read_csv('filter_IP.csv', error_bad_lines=False)
-    ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
-    features_rows = []
-    max_packets = 0
-    for i in range(len(ip_list)):
-        row = np.array(build_feature_row(filter_IP, ip_list, i))
-        if max_packets < len(row):
-            max_packets = len(row)
-        features_rows.append(row)
-    with open('features.csv', mode='w') as features_csv:
-        headers = build_header(max_packets+16)
-        writer = csv.writer(features_csv, delimiter=',',
-                            quotechar=',', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(headers)
-        for row in features_rows:
-            writer.writerow(row)
+        ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
+        n_packets = 10
+
+        with open('features.csv', mode='w') as features_csv:
+            headers = build_header(n_packets)
+            writer = csv.writer(features_csv, delimiter=',',
+                                quotechar=',', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow(headers)
+            for i in range(len(ip_list)):
+                row = np.array(build_feature_row(ip_list, i, n_packets))
+                writer.writerow(row)
+
 
 
 

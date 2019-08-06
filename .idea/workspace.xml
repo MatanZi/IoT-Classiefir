@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="239b6c48-6bdf-44a9-ac06-d535b869f3c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/csv_handler/WS12-05-2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csv_handler/feature_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_handler/csv_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/csv_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/feature_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/feature_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/features.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/features.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_handler/filter_IP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/filter_IP.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_handler/filter_MAC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/filter_MAC.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_handler/outfile_fixed.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/out/test" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,6 +157,7 @@
       <workItem from="1564952283495" duration="2204000" />
       <workItem from="1564955072344" duration="14516000" />
       <workItem from="1565031838851" duration="8129000" />
+      <workItem from="1565114618071" duration="10746000" />
     </task>
     <servers />
   </component>
@@ -186,7 +184,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/IoT_Classiefir$sample_builder.coverage" NAME="sample_builder Coverage Results" MODIFIED="1564951617682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sample_handler" />
-    <SUITE FILE_PATH="coverage/IoT_Classiefir$csv_builder.coverage" NAME="csv_builder Coverage Results" MODIFIED="1565032766497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
-    <SUITE FILE_PATH="coverage/IoT_Classiefir$feature_extractor.coverage" NAME="feature_extractor Coverage Results" MODIFIED="1565039975621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
+    <SUITE FILE_PATH="coverage/IoT_Classiefir$csv_builder.coverage" NAME="csv_builder Coverage Results" MODIFIED="1565125217793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
+    <SUITE FILE_PATH="coverage/IoT_Classiefir$feature_extractor.coverage" NAME="feature_extractor Coverage Results" MODIFIED="1565126738993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
   </component>
 </project>
