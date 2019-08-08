@@ -1,5 +1,1 @@
-ID,Address,N-packet_sent,packet_received,Diffrence_time (1-2),Diffrence_time (2-3),Diffrence_time (3-4),Diffrence_time (4-5),Diffrence_time (5-6),Diffrence_time (6-7),Diffrence_time (7-8),Diffrence_time (8-9),Diffrence_time (9-10),Diffrence_time (10-11),Avrage_time,Label
-1,192.168.1.150,5.0,5.0,0:00:01.800000,0:00:00.800000,0:00:02.200000,Camera 1
-2,192.168.1.151,5.0,5.0,0:00:28.800000,0:00:00.100000,0:00:28.850000,Camera 2
-3,192.168.1.119,5.0,5.0,0:01:36,0:03:12,Smart blub
-4,192.168.1.111,5.0,5.0,0:00:01.100000,0:00:02.200000,Intercom
+ID,s_mac,d_mac,s_ip,d_ip,s_port,d_port,N-packet_sent,packet_received,Diffrence_time (1-2),Diffrence_time (2-3),Diffrence_time (3-4),Diffrence_time (4-5),Diffrence_time (5-6),Diffrence_time (6-7),Diffrence_time (7-8),Diffrence_time (8-9),Diffrence_time (9-10),Avrage_time,Label

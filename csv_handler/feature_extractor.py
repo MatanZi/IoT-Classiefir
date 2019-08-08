@@ -3,7 +3,6 @@ from datetime import datetime
 
 import numpy as np
 import pandas as pd
-import switch as switch
 
 
 def get_n_packets(csv_file, address):
@@ -46,7 +45,7 @@ def get_max_packets(filter_IP, ip_list):
 
 def build_header(max_packets):
     try:
-        headers =["ID", "Address", "N-packet_sent", "packet_received"]
+        headers =["ID","s_mac", "d_mac", "s_ip", "d_ip", "s_port", "d_port", "N-packet_sent", "packet_received"]
         for i in range(max_packets):
             headers.append("Diffrence_time (" + str(i + 1) + "-" + str(i + 2) + ")")
         headers.append("Avrage_time")
@@ -56,7 +55,6 @@ def build_header(max_packets):
         print(e)
 
 
-#TODO
 def get_difference_time(address, n_packets):
     s_ip = address
     flag = False
@@ -83,6 +81,20 @@ def get_difference_time(address, n_packets):
 
     return result
 
+def build_difference_time(session_csv, n_packets):
+    before = 0
+    result = []
+    for i in range(n_packets):
+        for name, row in session_csv.iterrows():
+            if before == 0:
+                before = datetime.strptime(row['_ws.col.AbsTime'], '%M:%S.%f')
+            else:
+                after = datetime.strptime(row['_ws.col.AbsTime'], '%M:%S.%f')
+                result.append(after-before)
+                before = after
+
+    return result
+
 
 def get_label(ip_list, index):
     if ip_list[index] == "192.168.1.150":
@@ -95,11 +107,22 @@ def get_label(ip_list, index):
         return "Intercom"
 
 
-def build_feature_row(ip_list, index, n_packets):
-    row = [str(index+1), str(ip_list[index])]
-    row.append(str(n_packets/2))
-    row.append(str(n_packets/2))
-    diff_time = get_difference_time(ip_list[index], n_packets)
+def build_feature_row(session_csv, ip_list, index, n_packets):
+    row = [str(index+1)]
+    row.append(session_csv['wlan.sa'])
+    row.append(session_csv['wlan.da'])
+    row.append(session_csv['ip.src'])
+    row.append(session_csv['ip.dst'])
+    if pd.notnull(row['tcp.srcport']):
+        row.append(session_csv['tcp.srcport'])
+        row.append(session_csv['tcp.dstport'])
+    else:
+        row.append(session_csv['udp.srcport'])
+        row.append(session_csv['udp.dstport'])
+
+    row.append(str(n_packets))
+    row.append(str(n_packets))
+    diff_time = build_difference_time(session_csv, n_packets-1)
     sum_diff_time = diff_time[0]
     for time in diff_time:
         sum_diff_time = sum_diff_time + time
@@ -116,7 +139,7 @@ def extract_feature():
         n_packets = 10
 
         with open('features.csv', mode='w') as features_csv:
-            headers = build_header(n_packets)
+            headers = build_header(n_packets-1)
             writer = csv.writer(features_csv, delimiter=',',
                                 quotechar=',', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(headers)
