@@ -1,6 +1,3 @@
-import pandas as pd
-
-
 class Feature(object):
     def __init__(self, id, s_mac, d_mac, s_ip , d_ip, s_port, d_port, n_packet_sent, n_packet_received, time_list):
         self.id = id
@@ -26,10 +23,3 @@ def build_packets(features_csv):
         features_list.append(feature)
 
     return features_list
-
-
-csv_file = pd.read_csv('features.csv', error_bad_lines=False, warn_bad_lines=False, low_memory=False)
-
-f = build_packets(csv_file)
-for i in f:
-    print(i.time_list)

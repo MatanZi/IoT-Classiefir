@@ -24,6 +24,6 @@ def build_packets(csv_file):
         else:
             packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'], row['ip.dst'],
                             row['udp.srcport'], row['udp.dstport'], "UDP")
-        packet_list.append(packet)
+        packets_list.append(packet)
 
-    return packet_list
+    return packets_list
