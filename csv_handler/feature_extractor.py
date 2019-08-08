@@ -45,7 +45,7 @@ def get_max_packets(filter_IP, ip_list):
 
 def build_header(max_packets):
     try:
-        headers =["ID","s_mac", "d_mac", "s_ip", "d_ip", "s_port", "d_port", "N-packet_sent", "packet_received"]
+        headers =["ID","s_mac", "d_mac", "s_ip", "d_ip", "s_port", "d_port", "Protocol", "N-packet_sent", "packet_received"]
         for i in range(max_packets):
             headers.append("Diffrence_time (" + str(i + 1) + "-" + str(i + 2) + ")")
         headers.append("Avrage_time")
@@ -116,9 +116,11 @@ def build_feature_row(session_csv, ip_list, index, n_packets):
     if pd.notnull(row['tcp.srcport']):
         row.append(session_csv['tcp.srcport'])
         row.append(session_csv['tcp.dstport'])
+        row.append("TCP")
     else:
         row.append(session_csv['udp.srcport'])
         row.append(session_csv['udp.dstport'])
+        row.append("UDP")
 
     row.append(str(n_packets))
     row.append(str(n_packets))

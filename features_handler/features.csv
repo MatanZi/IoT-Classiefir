@@ -1,0 +1,6 @@
+ID,s_mac,d_mac,s_ip,d_ip,s_port,d_port,N-packet_sent,packet_received,Diffrence_time (1-2),Diffrence_time (2-3),Diffrence_time (3-4),Diffrence_time (4-5),Diffrence_time (5-6),Diffrence_time (6-7),Diffrence_time (7-8),Diffrence_time (8-9),Diffrence_time (9-10),Avrage_time,Label
+1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1
+1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1
+1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1
+1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1
+1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,1

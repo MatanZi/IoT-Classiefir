@@ -16,7 +16,7 @@ class Packet(object):
 
 def build_packets(csv_file):
     id = 1
-    packet_list = []
+    packets_list = []
     for name, row in csv_file.iterrows():
         if pd.notnull(row['tcp.srcport']):
             packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'], row['ip.dst'],
