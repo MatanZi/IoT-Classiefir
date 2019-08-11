@@ -11,9 +11,13 @@ def build_filtered_MAC_csv(csv_file, mac_list):
     MAC_csv.to_csv("filter_MAC.csv")
 
 
-def build_csv():
-    csv_file = pd.read_csv('WS12-05-2019.csv', error_bad_lines=False, warn_bad_lines=False, low_memory=False)
+def build_csv(csv_file):
+    df = pd.DataFrame()
+    for chunk in pd.read_csv(csv_file, error_bad_lines=False, warn_bad_lines=False, chunksize=20000):
+        df = pd.concat([df, chunk], ignore_index=True)
     ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
-    mac_list = ["98:FC:A1:F7:0F", "00:17:88:77:35:80", "FC:6B:F0:0A:C3:43", "6C:FD:B9:4F:70:0B"]
-    build_filtered_IP_csv(csv_file, ip_list)
-    build_filtered_MAC_csv(csv_file, mac_list)
+    mac_list = ["98:fc:a1:f7:0f", "00:17:88:77:35:80", "fc:6b:f0:0a:c3:43", "6c:fd:b9:4f:70:0b"]
+    build_filtered_IP_csv(df, ip_list)
+    build_filtered_MAC_csv(df, mac_list)
+
+build_csv('BigSample.csv') # BigSample.csv = 320mb dataset
