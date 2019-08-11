@@ -1,4 +1,4 @@
-import numpy as np
+from datetime import datetime
 
 class Session:
     def __init__(self, mac1, mac2):
@@ -15,6 +15,7 @@ class Session:
     def calcDeltaTime(self):
         packets_time = []
         for packet in self.packets:
-            packets_time.append(packet.time)
-        for i in range (1, len(packets_time)):
-            self.deltaT[i] = packets_time[i + 1] - packets_time[i]
+            dt = datetime.strptime(packet.time, '%Y-%m-%d %H:%M:%S.%f')
+            packets_time.append(dt)
+        for i in range (1, len(packets_time) - 1):
+            self.deltaT.append((packets_time[i + 1] - packets_time[i]).total_seconds())
