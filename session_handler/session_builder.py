@@ -1,6 +1,6 @@
 import pandas as pd
-from Session import Session
-from Packet import Packet
+from session_handler import Session
+from packet_handler import Packet
 
 
 def build_sessions(csv_file, mac):
