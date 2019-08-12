@@ -40,16 +40,24 @@ def build_sessions(csv_file, mac):
     return sessions
 
 
-#mac1 = '92:2c:c5:ee:c3:b4'
-#mac2 = '00:17:88:77:35:80'
-#df = pd.read_csv("filter_IP.csv")
-#print(df[(((df['wlan.sa'] == mac1) & (df['wlan.da'] == mac2)) | ((df['wlan.da'] == mac1) & (df['wlan.sa'] == mac2)))])
+'''
+mac1 = '98:fc:11:a1:f7:0f'
+mac2 = '00:1c:10:f7:cd:bc'
+df = pd.read_csv("filter_MAC.csv")
+print(df[(((df['wlan.sa'] == mac1) & (df['wlan.da'] == mac2)) | ((df['wlan.da'] == mac1) & (df['wlan.sa'] == mac2)))])
+'''
 
-
-
-sessions_dict = build_sessions("filter_IP.csv", "00:17:88:77:35:80") # filter_IP.csv for performance (need to use filter_MAC.csv)
+sessions_dict = build_sessions("filter_MAC.csv", "98:fc:11:a1:f7:0f") # filter_IP.csv for performance (need to use filter_MAC.csv)
 print(sessions_dict.keys())
 print("Number of sessions: " , len(sessions_dict))
 for session in sessions_dict.values():
-    session.calcDeltaTime()
-    print(session.deltaT)
+    send, rec = session.calc_delta_time_send_receive()
+    if len(send) > 1 or len(rec) > 1:
+        print()
+        print("Session with:", session.mac2)
+        if len(send) > 1:
+            print("-----------------------send-----------------------")
+            print(send)
+        if len(rec) > 1:
+            print("-----------------------rec------------------------")
+            print(rec)
