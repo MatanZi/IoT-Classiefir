@@ -5,6 +5,8 @@ class Session:
         self.mac1 = mac1
         self.mac2 = mac2
         self.deltaT = [0]
+        self.deltaT_mac1 = [0]
+        self.deltaT_mac2 = [0]
         self.packets = []
         self.packets_num = 0
 
@@ -12,10 +14,27 @@ class Session:
         self.packets.append(packet)
         self.packets_num += 1
 
-    def calcDeltaTime(self):
+    def calc_delta_time(self):
         packets_time = []
         for packet in self.packets:
             dt = datetime.strptime(packet.time, '%Y-%m-%d %H:%M:%S.%f')
             packets_time.append(dt)
-        for i in range (1, len(packets_time) - 1):
-            self.deltaT.append((packets_time[i + 1] - packets_time[i]).total_seconds())
+        for i in range (1, len(packets_time)):
+            self.deltaT.append((packets_time[i] - packets_time[i - 1]).total_seconds())
+        return self.deltaT
+
+    def calc_delta_time_send_receive(self):
+        packets_time_send = []
+        packets_time_rec = []
+        for packet in self.packets:
+            if packet.s_mac == self.mac1:
+                dt = datetime.strptime(packet.time, '%Y-%m-%d %H:%M:%S.%f')
+                packets_time_send.append(dt)
+            elif packet.d_mac == self.mac1:
+                dt = datetime.strptime(packet.time, '%Y-%m-%d %H:%M:%S.%f')
+                packets_time_rec.append(dt)
+        for i in range (1, len(packets_time_send)):
+            self.deltaT_mac1.append((packets_time_send[i] - packets_time_send[i - 1]).total_seconds())
+        for i in range (1, len(packets_time_rec)):
+            self.deltaT_mac2.append((packets_time_rec[i] - packets_time_rec[i - 1]).total_seconds())
+        return self.deltaT_mac1, self.deltaT_mac2
