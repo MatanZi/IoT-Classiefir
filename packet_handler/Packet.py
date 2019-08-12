@@ -6,7 +6,7 @@ import pandas as pd
 class Packet(object):
     def __init__(self, id, time, s_mac, d_mac, s_ip , d_ip, s_port, d_port, protocol):
         self.id = id
-        self.time = datetime.strptime(time, '%d/%m/%Y %H:%M:%S.%f')
+        self.time = datetime.strptime(time, '%Y-%m-%d %H:%M:%S.%f')
         self.s_mac = s_mac
         self.d_mac = d_mac
         self.s_ip = s_ip
@@ -20,19 +20,24 @@ def build_packets(csv_file):
     id = 1
     packets_list = []
     for name, row in csv_file.iterrows():
-        print(row['_ws.col.AbsTime'])
         if pd.notnull(row['tcp.srcport']):
-            packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'], row['ip.dst'],
+            packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'],
+                            row['ip.dst'],
                             row['tcp.srcport'], row['tcp.dstport'], "TCP")
-        else:
-            packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'], row['ip.dst'],
+        elif pd.notnull(row['udp.srcport']):
+            packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'],
+                            row['ip.dst'],
                             row['udp.srcport'], row['udp.dstport'], "UDP")
+        else:
+            packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'],
+                            row['ip.dst'],
+                            0, 0, "other")
         packets_list.append(packet)
+        id += 1
 
     return packets_list
 
 
-i = pd.read_csv("filter_IP.csv", error_bad_lines=False, warn_bad_lines=False)
-d = build_packets(i)
 
-print(d[0].time)
+t = pd.read_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\csv_handler\filter_IP_comp.csv", error_bad_lines=False, warn_bad_lines=False)
+build_packets(t)
