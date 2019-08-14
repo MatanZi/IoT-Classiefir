@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="239b6c48-6bdf-44a9-ac06-d535b869f3c5" name="Default Changelist" comment="" />
-=======
     <list default="true" id="239b6c48-6bdf-44a9-ac06-d535b869f3c5" name="Default Changelist" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/machine_learning_algorithms/Random Forest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/IoT Classiefir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoT Classiefir.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__main__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_handler/WS12-05-2019.csv" beforeDir="false" />
@@ -28,9 +24,8 @@
       <change beforePath="$PROJECT_DIR$/session_handler/Session.py" beforeDir="false" afterPath="$PROJECT_DIR$/session_handler/Session.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/session_handler/filter_MAC.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/session_handler/session_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/session_handler/session_builder.py" afterDir="false" />
->>>>>>> parent of 40ccd98... update main
+
     </list>
->>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +84,9 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="RunManager" selected="Python.__main__">
-=======
   <component name="RunManager" selected="Python.SVM">
->>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
+  <component name="RunManager" selected="Python.SVM">
     <configuration name="Feature" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="IoT-Classiefir" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,33 +131,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-<<<<<<< HEAD
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="IoT Classiefir" />
-=======
     <configuration name="Random Forest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="IoT-Classiefir" />
->>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
+    <configuration name="Random Forest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IoT-Classiefir" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__main__.py" />
-=======
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/csv_handler" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\IoT-Classiefir\machine_learning_algorithms\Random Forest.py" />
->>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/csv_handler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\IoT-Classiefir\machine_learning_algorithms\Random Forest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,19 +212,16 @@
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
         <item itemvalue="Python.__main__" />
         <item itemvalue="Python.csv_builder" />
         <item itemvalue="Python.session_builder" />
         <item itemvalue="Python.Packet (1)" />
         <item itemvalue="Python.Feature" />
-=======
         <item itemvalue="Python.SVM" />
         <item itemvalue="Python.Random Forest" />
         <item itemvalue="Python.Packet" />
         <item itemvalue="Python.Feature" />
         <item itemvalue="Python.session_builder" />
->>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +251,6 @@
       <workItem from="1565172838428" duration="18061000" />
       <workItem from="1565564467388" duration="10367000" />
       <workItem from="1565694027655" duration="13203000" />
-<<<<<<< HEAD
       <workItem from="1565725131099" duration="2179000" />
     </task>
     <task id="LOCAL‎00001" summary="Skeleton of 2 machine learning algorithms">
@@ -268,9 +258,13 @@
       <option name="number" value="LOCAL‎00001" />
       <option name="presentableId" value="LOCAL‎00001" />
       <updated>1565658383321</updated>
-=======
       <workItem from="1565725131099" duration="596000" />
->>>>>>> parent of 40ccd98... update main
+    </task>
+    <task id="LOCAL‎00001" summary="Skeleton of 2 machine learning algorithms">
+      <created>1565658383321</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1565658383321</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
