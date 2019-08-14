@@ -36,8 +36,3 @@ def build_packets(csv_file):
         id += 1
 
     return packets_list
-
-
-
-t = pd.read_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\csv_handler\filter_IP_comp.csv", error_bad_lines=False, warn_bad_lines=False)
-build_packets(t)

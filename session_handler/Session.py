@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Session:
-    def __init__(self, mac1, mac2):
+    def __init__(self, mac1, mac2, label):
         self.mac1 = mac1
         self.mac2 = mac2
         self.deltaT = [0]
@@ -10,6 +10,7 @@ class Session:
         self.deltaT_mac2 = [0]
         self.packets = []
         self.packets_num = 0
+        self.label = label
 
     def add(self, packet):
         self.packets.append(packet)
@@ -40,3 +41,5 @@ class Session:
         for i in range(1, len(packets_time_rec)):
             self.deltaT_mac2.append((packets_time_rec[i] - packets_time_rec[i - 1]).total_seconds())
         return self.deltaT_mac1, self.deltaT_mac2
+
+

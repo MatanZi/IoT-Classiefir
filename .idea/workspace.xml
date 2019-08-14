@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="239b6c48-6bdf-44a9-ac06-d535b869f3c5" name="Default Changelist" comment="" />
+=======
     <list default="true" id="239b6c48-6bdf-44a9-ac06-d535b869f3c5" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/machine_learning_algorithms/Random Forest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IoT Classiefir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IoT Classiefir.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_handler/Packet.py" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/WS12-05-2019.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_handler/csv_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/csv_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_handler/filter_IP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/filter_IP.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_handler/filter_MAC.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv_handler/filter_MAC.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/filter_IP.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/filter_IP_comp.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/filter_MAC.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_handler/sample.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features_handler/Feature.py" beforeDir="false" afterPath="$PROJECT_DIR$/features_handler/Feature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/WS12-05-2019.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packet_handler/Packet.py" beforeDir="false" afterPath="$PROJECT_DIR$/packet_handler/Packet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packet_handler/filter_IP.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packet_handler/filter_IP_comp.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/session_handler/Session.py" beforeDir="false" afterPath="$PROJECT_DIR$/session_handler/Session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/session_handler/filter_MAC.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/session_handler/session_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/session_handler/session_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session_handler/session_builer.py" beforeDir="false" />
+>>>>>>> parent of 40ccd98... update main
     </list>
+>>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1OubX6MzRV2THHHYE8zwFTjvYkp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -39,22 +59,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/session_handler" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\IoT-Classiefir\machine_learning_algorithms" />
+      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\session_handler" />
+      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\features_handler" />
+      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\out" />
+      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\sample_handler" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\session_handler" />
       <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\out" />
       <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\packet_handler" />
       <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\Packet_handler" />
       <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\csv_handler" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\session_handler" />
-      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\features_handler" />
-      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\out" />
-      <recent name="C:\Users\Matan\Documents\GitHub\IoT Classiefir\sample_handler" />
-      <recent name="C:\Users\Matan\Documents\GitHub" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -69,17 +89,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.session_builder">
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.__main__">
+=======
+  <component name="RunManager" selected="Python.SVM">
+>>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
     <configuration name="Feature" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="IoT Classiefir" />
+      <module name="IoT-Classiefir" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/features_handler" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -92,38 +116,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Packet (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="IoT Classiefir" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/packet_handler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/packet_handler/Packet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Packet" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="IoT Classiefir" />
+      <module name="IoT-Classiefir" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Packet_handler" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -136,20 +138,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="csv_builder" type="PythonConfigurationType" factoryName="Python" temporary="true">
+<<<<<<< HEAD
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="IoT Classiefir" />
+=======
+    <configuration name="Random Forest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IoT-Classiefir" />
+>>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/csv_handler" />
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/csv_handler/csv_builder.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__main__.py" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/csv_handler" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\IoT-Classiefir\machine_learning_algorithms\Random Forest.py" />
+>>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SVM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="IoT-Classiefir" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/machine_learning_algorithms" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/machine_learning_algorithms/SVM.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,15 +195,15 @@
       <method v="2" />
     </configuration>
     <configuration name="session_builder" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="IoT Classiefir" />
+      <module name="IoT-Classiefir" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/session_handler" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -182,11 +218,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.session_builder" />
+<<<<<<< HEAD
+        <item itemvalue="Python.__main__" />
         <item itemvalue="Python.csv_builder" />
+        <item itemvalue="Python.session_builder" />
         <item itemvalue="Python.Packet (1)" />
         <item itemvalue="Python.Feature" />
+=======
+        <item itemvalue="Python.SVM" />
+        <item itemvalue="Python.Random Forest" />
         <item itemvalue="Python.Packet" />
+        <item itemvalue="Python.Feature" />
+        <item itemvalue="Python.session_builder" />
+>>>>>>> 2a84bdc76aa9082e6751636e97a03cddeb0d327c
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +259,20 @@
       <workItem from="1565114618071" duration="11093000" />
       <workItem from="1565172838428" duration="18061000" />
       <workItem from="1565564467388" duration="10367000" />
+      <workItem from="1565694027655" duration="13203000" />
+<<<<<<< HEAD
+      <workItem from="1565725131099" duration="2179000" />
     </task>
+    <task id="LOCAL‎00001" summary="Skeleton of 2 machine learning algorithms">
+      <created>1565658383321</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1565658383321</updated>
+=======
+      <workItem from="1565725131099" duration="596000" />
+>>>>>>> parent of 40ccd98... update main
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,12 +295,15 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/IoT-Classifier" />
     </ignored-roots>
+    <MESSAGE value="Skeleton of 2 machine learning algorithms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skeleton of 2 machine learning algorithms" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/IoT_Classiefir$sample_builder.coverage" NAME="sample_builder Coverage Results" MODIFIED="1564951617682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sample_handler" />
-    <SUITE FILE_PATH="coverage/IoT_Classiefir$csv_builder.coverage" NAME="csv_builder Coverage Results" MODIFIED="1565626790986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
+    <SUITE FILE_PATH="coverage/IoT_Classiefir$csv_builder.coverage" NAME="csv_builder Coverage Results" MODIFIED="1565707938293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
     <SUITE FILE_PATH="coverage/IoT_Classiefir$Feature.coverage" NAME="Feature Coverage Results" MODIFIED="1565565202894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features_handler" />
     <SUITE FILE_PATH="coverage/IoT_Classiefir$session_builder.coverage" NAME="session_builder Coverage Results" MODIFIED="1565627620755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/session_handler" />
+    <SUITE FILE_PATH="coverage/IoT_Classiefir$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1565725612526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IoT_Classiefir$Packet__1_.coverage" NAME="Packet (1) Coverage Results" MODIFIED="1565626001557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/packet_handler" />
     <SUITE FILE_PATH="coverage/IoT_Classiefir$feature_extractor.coverage" NAME="feature_extractor Coverage Results" MODIFIED="1565281858238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_handler" />
     <SUITE FILE_PATH="coverage/IoT_Classiefir$Packet.coverage" NAME="Packet Coverage Results" MODIFIED="1565284863663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Packet_handler" />

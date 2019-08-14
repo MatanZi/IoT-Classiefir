@@ -1,22 +1,20 @@
+import os
+
 import pandas as pd
 
 
 def build_compressed_filtered_IP_csv(csv_file, ip_list):
     IP_csv = csv_file.loc[(csv_file['ip.src'].isin(ip_list)) | (csv_file['ip.dst'].isin(ip_list))]
     IP_csv_compressed = IP_csv.head(44000)
-    IP_csv_compressed.to_csv("filter_IP.csv")
+    #IP_csv_compressed.to_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\out\filter_IP.csv")
+    return IP_csv_compressed
 
 def build_filtered_IP_csv(csv_file, ip_list):
     IP_csv = csv_file.loc[(csv_file['ip.src'].isin(ip_list)) | (csv_file['ip.dst'].isin(ip_list))]
-    IP_csv.to_csv("filter_IP.csv")
+    #IP_csv.to_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\out\filter_IP.csv")
+    return IP_csv
 
 def build_filtered_MAC_csv(csv_file, mac_list):
     MAC_csv = csv_file.loc[(csv_file["wlan.sa"].isin(mac_list)) | (csv_file['wlan.da'].isin(mac_list))]
-    MAC_csv.to_csv("filter_MAC.csv")
-
-
-ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
-mac_list = ["98:fc:11:a1:f7:0f", "00:17:88:77:35:80", "fc:6b:f0:0a:c3:43", "6c:fd:b9:4f:70:0b"]
-t= pd.read_csv(r'C:\Users\Matan\Documents\GitHub\IoT Classiefir\out\WS12-05-2019.csv', error_bad_lines=False, warn_bad_lines=False)
-build_compressed_filtered_IP_csv(t,ip_list)
-build_filtered_MAC_csv(t,mac_list)
+    #MAC_csv.to_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\out\filter_MAC.csv")
+    return MAC_csv
