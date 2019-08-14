@@ -1,7 +1,3 @@
-import os
-
-import pandas as pd
-
 
 def build_compressed_filtered_IP_csv(csv_file, ip_list):
     IP_csv = csv_file.loc[(csv_file['ip.src'].isin(ip_list)) | (csv_file['ip.dst'].isin(ip_list))]
