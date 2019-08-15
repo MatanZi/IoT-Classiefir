@@ -1,6 +1,6 @@
 import pandas as pd
 from csv_handler.csv_builder import *
-from features_handler.Feature import Feature
+from sample_handler.Sample import Sample
 from packet_handler.Packet import build_packets
 from session_handler.session_builder import build_sessions
 from packet_handler.Packet import Packet
@@ -9,9 +9,9 @@ from packet_handler.Packet import Packet
 def main():
     ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
     mac_list = ["98:fc:11:a1:f7:0f", "00:17:88:77:35:80", "fc:6b:f0:0a:c3:43", "6c:fd:b9:4f:70:0b"]
-    feature_id = 0
+    sample_id = 0
     N = 10
-    feature_list = []
+    sample_list = []
 
     print("retrieving dataset...")
     dataset = pd.DataFrame()
@@ -32,14 +32,13 @@ def main():
     filtered_ip_packets = build_packets(filtered_IP)
     for address in mac_list:
         session_list = build_sessions(filtered_ip_packets, address)
-        print(len(session_list))
         for mac_address in session_list:
-            if len(session_list[mac_address].packets) > 1:
+            if len(session_list[mac_address].packets) > N:
                 sent_time, rec_time = session_list[mac_address].calc_delta_time_send_receive()
                 packet = session_list[mac_address].packets[0]
-                feature_list.append(Feature(feature_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N,sent_time[:N], rec_time[:N], session_list[mac_address].label))
+                sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_list[mac_address].label))
 
-    print(len(feature_list))
+    print(sample_list[0].toString(self=sample_list[0]))
 
 
 
