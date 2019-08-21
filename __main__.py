@@ -38,7 +38,7 @@ def main():
                 packet = session_list[mac_address].packets[0]
                 sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_list[mac_address].label))
 
-    print(sample_list[0].toString(self=sample_list[0]))
+    print(sample_list[0].sent_time)
 
 
 
