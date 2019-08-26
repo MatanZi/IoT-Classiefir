@@ -11,11 +11,11 @@ dataset.head()
 
 # TODO
 
-#X = np.array([convert2vec(dataset[i]) for i in range(len(dataset))])
-#y = np.array(
- #   [[1, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 1]])
-# X = dataset.iloc[:, 0:11].values
-# y = dataset.iloc[:, 11].values
+X = np.array([convert2vec(dataset[i]) for i in range(len(dataset))])
+y = np.array(
+   [[1, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 1]])
+ #X = dataset.iloc[:, 0:11].values
+ #y = dataset.iloc[:, 11].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 

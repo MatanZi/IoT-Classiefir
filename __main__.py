@@ -8,7 +8,7 @@ from packet_handler.Packet import Packet
 
 def main():
     ip_list = ["192.168.1.150", "192.168.1.151", "192.168.1.119", "192.168.1.111"]
-    mac_list = ["98:fc:11:a1:f7:0f", "00:17:88:77:35:80", "fc:6b:f0:0a:c3:43", "6c:fd:b9:4f:70:0b"]
+    mac_list = ["98:fc:11:a1:f7:0f", "6c:fd:b9:4f:70:0b", "00:17:88:77:35:80", "fc:6b:f0:0a:c3:43"]
     sample_id = 0
     N = 10
     sample_list = []
