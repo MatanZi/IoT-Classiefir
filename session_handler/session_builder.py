@@ -4,11 +4,11 @@ from session_handler.Session import Session
 def get_label(address):
     if address == "192.168.1.150" or address == "98:fc:11:a1:f7:0f":
         return "Camera 1"
-    elif address == "192.168.1.151" or address == "00:17:88:77:35:80":
+    elif address == "192.168.1.151" or address == "6c:fd:b9:4f:70:0b":
         return "Camera 2"
-    elif address == "192.168.1.119" or address == "fc:6b:f0:0a:c3:43":
+    elif address == "192.168.1.119" or address == "00:17:88:77:35:80":
         return "Smart blub"
-    elif address == "192.168.1.111" or address == "6c:fd:b9:4f:70:0b":
+    elif address == "192.168.1.111" or address == "fc:6b:f0:0a:c3:43":
         return "Intercom"
     else:
         print("Label wasn't found !")
