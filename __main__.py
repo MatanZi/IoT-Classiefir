@@ -1,8 +1,10 @@
 import pandas as pd
+import numpy as np
 from csv_handler.csv_builder import *
 from sample_handler.Sample import Sample
 from packet_handler.Packet import build_packets
 from session_handler.session_builder import build_sessions
+from machine_learning_algorithms.random_forest import RF
 from packet_handler.Packet import Packet
 
 
@@ -13,10 +15,12 @@ def main():
     N = 10
     sample_list = []
 
+
     print("retrieving dataset...")
     dataset = pd.DataFrame()
-    for chunk in pd.read_csv(r"C:\Users\Matan\Documents\GitHub\IoT Classiefir\out\packets_dataset.csv", error_bad_lines=False, warn_bad_lines=False, chunksize=20000):
+    for chunk in pd.read_csv(r"C:\Users\user\Desktop\final project new\filter_IP.csv", error_bad_lines=False, warn_bad_lines=False, chunksize=20000):
         dataset = pd.concat([dataset, chunk], ignore_index=True)
+
 
     # create CSV with olny IoT device ip address
     filtered_IP = build_filtered_IP_csv(dataset, ip_list)
@@ -30,15 +34,27 @@ def main():
     # create features
     print("Creating features...")
     filtered_ip_packets = build_packets(filtered_IP)
-    for address in mac_list:
-        session_list = build_sessions(filtered_ip_packets, address)
-        for mac_address in session_list:
-            if len(session_list[mac_address].packets) > N:
-                sent_time, rec_time = session_list[mac_address].calc_delta_time_send_receive()
-                packet = session_list[mac_address].packets[0]
-                sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_list[mac_address].label))
-
-    print(sample_list[0].sent_time)
+    for address in ip_list:
+        session_dict = build_sessions(filtered_ip_packets, address)
+        for session in session_dict:
+            if session_dict[session].packets_num > 1:
+                sent_time, rec_time = session_dict[session].calc_delta_time_send_receive()
+                #packet = session_dict[session].packets[0]
+                sample_list.append([sent_time[:N], rec_time[:N], session_dict[session].label])
+                print(sample_list)
+                #sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_dict[ip_address].label))
+    #print(sample_list[0].sent_time)
+    n = len(sample_list)
+    X = np.ndarray((n,))
+    y = np.ndarray((n,))
+    for sample in sample_list:
+        X = np.append(sample[:2], X)
+        y = np.append(sample[2], y)
+    print("x = ")
+    print(X)
+    print("y = ")
+    print(y)
+    #RF(X, y)
 
 
 

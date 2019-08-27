@@ -1,37 +1,38 @@
 from session_handler.Session import Session
+import numpy as np
 
 
 def get_label(address):
     if address == "192.168.1.150" or address == "98:fc:11:a1:f7:0f":
-        return "Camera 1"
+        return np.array([1, 0, 0, 0]) # Camera 1
     elif address == "192.168.1.151" or address == "6c:fd:b9:4f:70:0b":
-        return "Camera 2"
+        return np.array([0, 1, 0, 0]) # Camera 2
     elif address == "192.168.1.119" or address == "00:17:88:77:35:80":
-        return "Smart blub"
+        return np.array([0, 0, 1, 0]) # Smart bulb
     elif address == "192.168.1.111" or address == "fc:6b:f0:0a:c3:43":
-        return "Intercom"
+        return np.array([0, 0, 0, 1]) # Smart doorbell
     else:
         print("Label wasn't found !")
 
 
-def build_sessions(packet_list, mac):
+def build_sessions(packet_list, ip):
     sessions = {}
     for packet in packet_list:
         # check if the packet belongs to a known session, if it does, add the packet to it's session
-        # (filtering by other mac)
-        label = get_label(mac)
-        if packet.s_mac == mac:
-            if packet.d_mac in sessions.keys():
-                sessions[packet.d_mac].add(packet)
+        # (filtering by other ip)
+        label = get_label(ip)
+        if packet.s_ip == ip:
+            if packet.d_ip in sessions.keys():
+                sessions[packet.d_ip].add(packet)
             else:
-                new_session = Session(mac, packet.d_mac , label)
+                new_session = Session(ip, packet.d_ip, label)
                 new_session.add(packet)
-                sessions[packet.d_mac] = new_session
-        elif packet.d_mac == mac:
-            if packet.s_mac in sessions.keys():
-                sessions[packet.s_mac].add(packet)
+                sessions[packet.d_ip] = new_session
+        elif packet.d_ip == ip:
+            if packet.s_ip in sessions.keys():
+                sessions[packet.s_ip].add(packet)
             else:
-                new_session = Session(mac, packet.s_mac ,label)
+                new_session = Session(ip, packet.s_ip, label)
                 new_session.add(packet)
-                sessions[packet.s_mac] = new_session
+                sessions[packet.s_ip] = new_session
     return sessions
