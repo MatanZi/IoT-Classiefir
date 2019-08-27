@@ -40,7 +40,8 @@ def main():
             if session_dict[session].packets_num > 1:
                 sent_time, rec_time = session_dict[session].calc_delta_time_send_receive()
                 #packet = session_dict[session].packets[0]
-                sample_list.append([sent_time[:N], rec_time[:N], session_dict[session].label])
+
+                sample_list.append([np.asarray(sent_time[:N-1]), np.asarray(rec_time[:N-1]), session_dict[session].label])
                 print(sample_list)
                 #sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_dict[ip_address].label))
     #print(sample_list[0].sent_time)
@@ -48,8 +49,8 @@ def main():
     X = np.ndarray((n,))
     y = np.ndarray((n,))
     for sample in sample_list:
-        X = np.append(sample[:2], X)
-        y = np.append(sample[2], y)
+        X = np.concatenate(X, sample[:2])
+        y = np.concatenate(y, sample[2])
     print("x = ")
     print(X)
     print("y = ")
