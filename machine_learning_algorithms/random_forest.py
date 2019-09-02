@@ -11,7 +11,7 @@ def RF(X, y):
 
     sc = StandardScaler()
     X_train = sc.fit_transform(X_train)
-    X_test = sc.fit_transform(X_test)
+    X_test = sc.transform(X_test)
 
     classifier = RandomForestClassifier(n_estimators=20, random_state=0)
     classifier.fit(X_train, y_train)
