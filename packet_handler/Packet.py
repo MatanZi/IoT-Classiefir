@@ -13,12 +13,13 @@ class Packet(object):
         self.s_port = int(s_port)
         self.d_port = int(d_port)
         self.protocol = protocol
+       # self.length = length
 
 
-def build_packets(csv_file):
+def build_packets(df):
     id = 1
     packets_list = []
-    for name, row in csv_file.iterrows():
+    for name, row in df.iterrows():
         if pd.notnull(row['tcp.srcport']):
             packet = Packet(id, row['_ws.col.AbsTime'], row['wlan.sa'], row['wlan.da'], row['ip.src'],
                             row['ip.dst'],
