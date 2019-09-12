@@ -5,6 +5,7 @@ from sample_handler.Sample import Sample
 from packet_handler.Packet import build_packets
 from session_handler.session_builder import build_sessions
 from machine_learning_algorithms.random_forest import RF
+from machine_learning_algorithms.SVM import SVM
 from packet_handler.Packet import Packet
 from sklearn import datasets
 
@@ -16,7 +17,7 @@ def main():
     N = 10
     sample_list = []
 
-    dataset_file =  r"C:\Users\Dan\PycharmProjects\IOT_project\BigSample.csv"
+    dataset_file =  r"C:\Users\user\Desktop\final_project_new\outfile.csv"
 
     print("retrieving dataset...")
     dataset = pd.DataFrame()
@@ -49,7 +50,6 @@ def main():
                 #sample = Sample(np.asarray(session.packets_size_sent[:N]), np.asarray(session.packets_size_rec[:N]), np.asarray(sent_time[:N-1]), np.asarray(rec_time[:N-1]), np.asarray(session.label))
 
                 sample_list.append(sample)
-                print(sample_list)
                 #sample_list.append(Sample(sample_id, packet.s_mac, packet.d_mac, packet.s_ip, packet.d_ip, packet.s_port, packet.d_port, N, N, sent_time[:N], rec_time[:N], session_dict[ip_address].label))
     #print(sample_list[0].sent_time)
 
@@ -78,6 +78,7 @@ def main():
     definitions = factor[1]
 
     RF(X,y, definitions)
+    #SVM(X,y)
 
 
    # iris = datasets.load_iris()

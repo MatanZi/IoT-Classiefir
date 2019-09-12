@@ -5,6 +5,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 from __main__ import Sample
 import numpy as np
 import pandas as pd
+import numpy as np
 
 def RF(X, y, definitions):
 
