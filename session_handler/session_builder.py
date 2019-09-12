@@ -15,10 +15,10 @@ def get_label(address):
 
 def build_sessions(packet_list, ip):
     sessions = {}
+    label = get_label(ip)
     for packet in packet_list:
         # check if the packet belongs to a known session, if it does, add the packet to it's session
         # (filtering by other ip)
-        label = get_label(ip)
         if packet.s_ip == ip:
             if packet.d_ip in sessions.keys():
                 sessions[packet.d_ip].add(packet)

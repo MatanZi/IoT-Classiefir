@@ -26,10 +26,10 @@ class Session:
         packets_time = []
         for packet in self.packets:
             packets_time.append(packet.time)
-        for i in range (1, len(packets_time) - 1):
+        for i in range(1, len(packets_time) - 1):
             self.deltaT.append((packets_time[i + 1] - packets_time[i]).total_seconds())
             packets_time.append(packet.time)
-        for i in range (1, len(packets_time)):
+        for i in range(1, len(packets_time)):
             self.deltaT.append((packets_time[i] - packets_time[i - 1]).total_seconds())
         return self.deltaT
 
@@ -48,4 +48,18 @@ class Session:
             self.deltaT_ip2.append((packets_time_rec[i] - packets_time_rec[i - 1]).total_seconds())
         return self.deltaT_ip1, self.deltaT_ip2
 
+    def split(self, n):
+        sub_sessions = {}
+        i = 0
+        sub_sessions[0] = Session(self.ip1, self.ip2, self.label)
+        sub_sessions[0].add(self.packets[0])
+        for packet in self.packets:
+            if (len(sub_sessions[i].packets_size_sent) < n) or (len(sub_sessions[i].packets_size_rec) < n):
+                sub_sessions[i].add(packet)
+            else:
+                i += 1
+                new_session = Session(self.ip1, self.ip2, self.label)
+                new_session.add(packet)
+                sub_sessions[i] = new_session
+        return sub_sessions
 
