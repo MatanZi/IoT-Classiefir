@@ -2,9 +2,9 @@ import numpy as np
 
 
 class Sample(object):
-    def __init__(self, n_packet_sent_time, n_packet_rec_time, label):
-     #   self.sizeof_n_packet_sent = sizeof_n_packet_sent
-      #  self.sizeof_n_packet_received = sizeof_n_packet_received
+    def __init__(self, sizeof_n_packet_sent, sizeof_n_packet_received, n_packet_sent_time, n_packet_rec_time, label):
+        self.sizeof_n_packet_sent = sizeof_n_packet_sent
+        self.sizeof_n_packet_received = sizeof_n_packet_received
         self.n_packet_sent_time = n_packet_sent_time
         self.n_packet_rec_time = n_packet_rec_time
         self.label = label

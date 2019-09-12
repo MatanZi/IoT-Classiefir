@@ -10,13 +10,13 @@ import numpy as np
 def RF(X, y, definitions):
 
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=21)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30)
 
     sc = StandardScaler()
     X_train = sc.fit_transform(X_train)
     X_test = sc.fit_transform(X_test)
 
-    classifier = RandomForestClassifier(n_estimators=20, criterion='entropy', random_state=42)
+    classifier = RandomForestClassifier(n_estimators=20, max_depth=15,  criterion='entropy')
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
     print(confusion_matrix(y_test, y_pred))

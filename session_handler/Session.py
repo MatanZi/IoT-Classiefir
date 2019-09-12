@@ -16,10 +16,10 @@ class Session:
 
     def add(self, packet):
         self.packets.append(packet)
-#        if packet.s_ip == self.ip1:
-#            self.packets_size_sent.append(packet.length)
-#        elif packet.s_ip == self.ip2:
-#            self.packets_size_rec.append(packet.length)
+        if packet.s_ip == self.ip1:
+            self.packets_size_sent.append(packet.length)
+        elif packet.s_ip == self.ip2:
+            self.packets_size_rec.append(packet.length)
         self.packets_num += 1
 
     def calc_delta_time(self):
