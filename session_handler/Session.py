@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+from packet_handler import Packet
 
 
 class Session:
@@ -48,7 +49,24 @@ class Session:
             self.deltaT_ip2.append((packets_time_rec[i] - packets_time_rec[i - 1]).total_seconds())
         return self.deltaT_ip1, self.deltaT_ip2
 
-    def split(self, n):
+    def split_by_time(self, max_sess_length):
+        sub_sessions = {}
+        i = 0
+        sub_sessions[0] = Session(self.ip1, self.ip2, self.label)
+        sub_sessions[0].add(self.packets[0])
+        t = sub_sessions[0].packets[0].time + timedelta(seconds=max_sess_length)
+        for packet in self.packets[1:]:
+            if packet.time <= t:
+                sub_sessions[i].add(packet)
+            else:
+                t = packet.time + timedelta(seconds=max_sess_length)
+                i += 1
+                new_session = Session(self.ip1, self.ip2, self.label)
+                new_session.add(packet)
+                sub_sessions[i] = new_session
+        return sub_sessions
+
+    def split_by_packets(self, n):
         sub_sessions = {}
         i = 0
         sub_sessions[0] = Session(self.ip1, self.ip2, self.label)
@@ -63,3 +81,5 @@ class Session:
                 sub_sessions[i] = new_session
         return sub_sessions
 
+    def get_session_length(self):
+        return (self.packets[len(self.packets)-1].time - self.packets[0].time).total_seconds()
