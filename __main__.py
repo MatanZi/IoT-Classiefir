@@ -10,11 +10,11 @@ def main():
     N = 10
 
     start_time = datetime.now()
-    dataset_file = r"C:\Users\Dan\PycharmProjects\IoT-Classiefir\outfile0505.csv"
-    features_csv_path = r"C:\Users\Dan\PycharmProjects\IoT-Classiefir\features1.csv"
-    build_features_csv_time_split(dataset_file, features_csv_path, ip_list, 300, N)
+    dataset_file = r"C:\Users\user\Desktop\final_project_new\outfile0505.csv"
+    features_csv_path = r"C:\Users\user\PycharmProjects\IoT-Classiefir\features1.csv"
+    #build_features_csv_time_split(dataset_file, features_csv_path, ip_list, 300, N)
 
-    build_features_csv_packet_split(dataset_file, features_csv_path, ip_list, N)
+    #build_features_csv_packet_split(dataset_file, features_csv_path, ip_list, N)
 
 
     end_time = datetime.now()
