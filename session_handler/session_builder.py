@@ -4,20 +4,33 @@ import numpy as np
 import pandas as pd
 
 
-def get_label(address):
+def get_iot_label(address):
     if address == "192.168.1.150" or address == "98:fc:11:a1:f7:0f":
         return "Camera 1"
-    elif address == "192.168.1.151" or address == "6c:fd:b9:4f:70:0b":
+    elif address == "192.168.1.151" or address == "6c:fd:b9:4f:70:0b": #"192.168.0.5"
         return "Camera 2"
-    elif address == "192.168.1.119" or address == "00:17:88:77:35:80":
+    elif address == "192.168.0.104" or address == "00:17:88:77:35:80": #"192.168.0.104"
         return "Smart bulb"
-    elif address == "192.168.1.111" or address == "fc:6b:f0:0a:c3:43":
+    elif address == "192.168.1.111" or address == "fc:6b:f0:0a:c3:43": #"192.168.0.179"
         return "Smart doorbell"
+
+
+def get_non_iot_label(address):
+    if address == "192.168.1.150" or address == "98:fc:11:a1:f7:0f":
+        return "IoT"
+    elif address == "192.168.1.151" or address == "6c:fd:b9:4f:70:0b":
+        return "IoT"
+    elif address == "192.168.1.119" or address == "00:17:88:77:35:80":
+        return "IoT"
+    elif address == "192.168.1.111" or address == "fc:6b:f0:0a:c3:43":
+        return "IoT"
+    else:
+        return "Non-IoT"
 
 
 def build_sessions_df(df, ip):
     sessions = {}
-    label = get_label(ip)
+    label = get_iot_label(ip)
     session_packets = df.loc[(df['ip.src'] == ip) | (df['ip.dst'] == ip), :]
     for i, row in session_packets.iterrows():
         # check if the packet belongs to a known session, if it does, add the packet to it's session
@@ -60,9 +73,12 @@ def build_sessions_df(df, ip):
 '''
 
 
-def build_sessions(packet_list, ip):
+def build_sessions(packet_list, ip, classby=''):
     sessions = {}
-    label = get_label(ip)
+    if classby == 'noniot':
+        label = get_non_iot_label(ip)
+    else:
+        label = get_iot_label(ip)
     for packet in packet_list:
         # check if the packet belongs to a known session, if it does, add the packet to it's session
         # (filtering by other ip)
